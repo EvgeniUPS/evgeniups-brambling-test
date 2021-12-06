@@ -1,0 +1,33 @@
+.footer {
+  background-color: #000;
+  color: #fff;
+  padding: 40px 0;
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 60px;
+    & li {
+      list-style: none;
+      & a {
+        font-size: 16px;
+        white-space: nowrap;
+      }
+    }
+  }
+}
+@media screen and (max-width: 580px) {
+  .footer {
+    &__list {
+      column-gap: 20px;
+    }
+  }
+}
+@media screen and (max-width: 400px) {
+  .footer {
+    &__list {
+      column-gap: 15px;
+      flex-wrap: wrap;
+    }
+  }
+} ;

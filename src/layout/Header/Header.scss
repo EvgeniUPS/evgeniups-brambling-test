@@ -1,0 +1,84 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: max-content;
+  z-index: 10;
+  background-color: rgba(#fff, 0);
+  transition: .3s;
+  &.bg {
+    background-color: rgba(#fff, .9);
+    transition: .3s;
+  }
+  &__inner {
+    padding: 10px 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__burger {
+    background: transparent;
+    border: none;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #000000;
+    cursor: pointer;
+  }
+}
+@media screen and ( max-width: 580px ) {
+  .header {
+    &__logo {
+      height: 50px;
+      & img {
+        height: 100%;
+      }
+    }
+    &__burger {
+      position: relative;
+      width: 32px;
+      height: 32px;
+      & span {
+        font-size: 0;
+        color: transparent;
+        background: #000;
+        border-radius: 8px;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        transform: translateY(-50%);
+        &::before,
+        &::after {
+          content: '';
+          display: inline-block;
+          height: 100%;
+          border-radius: 8px;
+          position: absolute;
+          left: 0;
+          background: #000;
+        }
+        &::before {
+          top: -7px;
+          width: 100%;
+        }
+        &::after {
+          bottom: -7px;
+          width: 70%;
+        }
+      }
+    }
+  }
+}
+@media all and (orientation:landscape) and (max-width: 768px) {
+  .header {
+    &__logo {
+      height: 50px;
+      & img {
+        height: 100%;
+      }
+    }
+  }
+};
